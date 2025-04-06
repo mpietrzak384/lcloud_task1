@@ -14,11 +14,7 @@ import subprocess
 
 import os
 
-
-
 # Collecting information about EC2 instance from AWS service
-
-
 
 user_data = 'http://169.254.169.254/latest/user-data'
 
@@ -33,7 +29,6 @@ ec2_params = {
     'Security Groups': 'security-groups',
 }
 
-
 try:
 
     fh = open(ec2InsDatafile, 'w')
@@ -41,8 +36,6 @@ try:
 except:
 
     print('Error while opening file for write')
-
-
 
 for param, value in ec2_params.items():
 
@@ -74,7 +67,6 @@ for param, value in ec2_params.items():
         print(data)
 
 #Getting  OS related if from system files
-
 
 os_vers = "grep '^VERSION=' /etc/os-release |cut -d'=' -f2"
 os_name = "grep '^NAME' /etc/os-release |cut -d'=' -f2"
